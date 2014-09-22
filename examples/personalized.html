@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Dynamic Links</title>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <style type="text/css" media="all">
+
+#to_be_cropped {
+  width: 300px;
+  height: 20px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "times new roman";
+  background-color: #F3EEFC;
+  color: #022909;
+}
+
+    </style>
+  </head>
+
+  <body>
+
+
+    <h2>Content to be cropped</h2>
+
+    <div id="to_be_cropped">
+      Hi, <span>Recipient</span>!
+    </div>
+
+
+    <h2>About Personalizing through Parameters</h2>
+    <p>In the last two examples you saw how MI integrates with time-sensitive content.  In this example, we're going to look at user-specific content.</p>
+
+    <p>In this example, if you append <a href="?name=Christopher">?name=Christopher</a> to the end of the URL, you will see that the name "Christopher" gets added to #to_be_cropped element.  You can assign whatever value to "name" in the URL, and the page will change based on what you put in there.</p>
+
+    <p>When the email client sends a request to our server, any parameter that is added to the end of the image path is appended to the end of this URL.  So, for example, if the embed code (html snippets form Movable Ink) is:</p>
+
+    <pre>
+      &lt;img src="http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png" alt="" /&gt;
+    </pre>
+
+    <p>And it's programmed to crop from:</p>
+    <pre>
+      http://www.movableink.com
+    </pre>
+    <p>If you modify the embed code to be this:</p>
+    <pre>
+      &lt;img src="http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png?cats_breath=smells_like_cat_food" alt="" /&gt;
+    </pre>
+    <p>It will crop from this url:</p>
+    <pre>
+      http://www.movableink.com?cats_breath=smells_like_cat_food
+    </pre>
+
+    <p>This is a powerful way to pack a lot of rich, live data into your emails.  When properly hooked up, crops are functionally more like iframes than they are conventional images.  Additionally, you can use the MI dynamic link ability to create unique click-through links per recipient.</p>
+
+    <h2>Gotchas</h2>
+    <h3>Keep in mind that there are public URLs</h3>
+    <p>One thing you'll want to consider when appending personalized parameters is that all MI url endpoints are completely public.  You would not want to merge in an account number to retrieve an image of someone's checking account balance.</p>
+    <h3>This will visit the crop source once every email open</h3>
+    <p>If you do not use personalized parameters, MI will visit the source page once every cache cycle.  If you add in parameters, MI will visit the source page once every unique parameter set.  We have had a few clients accidentally attack their own websites through their email campaigns.  Don't let this happen, and plan accordingly.  If you would like advise on this, please feel free to contact us.</p>
+
+    <script type="text/javascript">
+      var name = param('name') || 'Recipient';
+      var n = document.querySelector('#to_be_cropped span');
+      n.innerText = name;
+
+      function param(name) {
+        if(typeof(urlParams) == 'undefined') {
+          urlParams = {};
+          (function () {
+             var match,
+                 search = /([^&=]+)=?([^&]*)/g,
+                 decode = function (s) { return decodeURIComponent(s); },
+                 query  = window.location.search.substring(1);
+
+             while (match = search.exec(query))
+               urlParams[decode(match[1])] = decode(match[2]);
+          })();
+        }
+        return urlParams[name];
+      }
+    </script>
+  </body>
+</html>
