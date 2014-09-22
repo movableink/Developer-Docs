@@ -12,7 +12,7 @@ For example,
 
 displays the following image:
 
-    ![](http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png)
+![](http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png)
 
 These images are constructed dynamically as soon as Movable Ink receives a request for this image.  If you refresh the page, you should see an image with new, up to date content.
 
@@ -42,6 +42,6 @@ If you don't have an account but would lik to learn about the tech anyways, feel
 Helpful Links
 -------------
 
-http://movableink.com/
-http://support.movableink.com
-http://www.pinterest.com/movableink/
+* [http://movableink.com/](http://movableink.com/)
+* [http://support.movableink.com](http://support.movableink.com)
+* [http://www.pinterest.com/movableink/](http://www.pinterest.com/movableink/)
