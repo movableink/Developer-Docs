@@ -1,0 +1,105 @@
+// Include Reset as a partial
+@import 'reset';
+@import 'mixins';
+
+body {
+  background-color: $ivory;
+}
+
+header {
+  position: relative;
+  height: 180px;
+  line-height: 180px;
+  text-align: center;
+  background-color: $blue;
+  h1 {
+    @include vertical-align;
+    color: $ivory;
+    @include font-size(32px);
+    font-weight: 300;
+  }
+}
+
+.faq {
+  position: relative;
+  width: 90%;
+  max-width: 1024px;
+  margin: 2em auto;
+  @extend %clearfix;
+}
+
+.faq-categories {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 256px;
+  z-index: 2;
+  max-width: 25%;
+  float: left;
+  background: $darkest-navy;
+  @include font-size(14px);
+  li {
+    border-bottom: 1px solid #2c2f38;
+  }
+  a {
+    display: block;
+    padding: 1em;
+    color: $ivory;
+    font-weight: 700;
+    border-left: 3px solid transparent;
+    &:hover {
+      background: #2c2f38;
+    }
+    &.active {
+      border-left: 3px solid $pink;
+      background: #2c2f38;
+    }
+  }
+}
+
+.faq-items {
+  float: right;
+  width: 71%;
+}
+
+
+.faq-title {
+  @include font-size(14px);
+  color: $graphite;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.faq-group:first-child .faq-title  {margin-top: 0;}
+
+.faq-group > li {
+  &:nth-child(1n+2) {
+    background: $white;
+    margin-bottom: 0.5em;
+    padding: 1.25em 1em;
+    color: $blue;
+    @include font-size(20px);
+    @include box-shadow (0,0,6px, #eee);
+    &:hover {
+      @include box-shadow (0,0,6px, #ccc);
+      cursor: pointer;
+    }
+  }
+  &:first-child {
+    padding: 0 0 0 0;
+    margin: 2em 0 0.5em 0;
+  }
+}
+
+.faq-content {
+  display: none;
+  color: $concrete;
+  @include font-size(15px);
+  p:nth-of-type(1) { margin-top: 2em;}
+  img:first-child {margin-top: 2em; border: 1px solid $cement; display: block;}
+}
+
+
+
+
+
