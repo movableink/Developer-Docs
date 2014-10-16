@@ -54,12 +54,6 @@ $(function() {
 });
 
 
-// if ("a[href='#current_time']") {
-//         scrollTop: target.offset().top - 200
-//         }, 800);
-//       }, else
-
-
 
 
 
