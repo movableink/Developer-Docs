@@ -1,28 +1,38 @@
+<!doctype html>
 <html>
-  <head>
-    <title>API integration</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movable Ink SDK - API</title>
+  <link rel="stylesheet" href="/css/style.css">
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <style type="text/css" media="screen">
+  #to_be_cropped {
+    width: 300px;
+    padding: 20px;
+    font-size: 14px;
+    text-align: left;
+    font-family: "times new roman";
+    background-color: #F3EEFC;
+    color: #022909;
+  }
 
-    <style type="text/css" media="all">
+  </style>
 
-#to_be_cropped {
-  width: 300px;
-  padding: 20px;
-  font-size: 14px;
-  text-align: left;
-  font-family: "times new roman";
-  background-color: #F3EEFC;
-  color: #022909;
-}
+</head>
+<body>
 
-    </style>
-  </head>
-
-  <body>
+<header>
+  <a href="../index.html" class="link-back -absolute-center -white">BACK TO FAQ</a>
+  <h1>Movable Ink SDK Index - API</h1>
+</header>
 
 
-    <h2>Content to be cropped</h2>
+<div class="container-content -med_width">
+  <div class="content">
+
+    <h4>Content to be cropped</h4>
 
     <div id="to_be_cropped">
     </div>
@@ -38,8 +48,16 @@
     <p>Because of this, we discourage the standard web practice of executing JS after the DOM for MI crop sources.  Additionally, AJAX calls should be made synchronous.</p>
     <p>Lastly, if you are running into Cross-Origin issues, Movable Ink offers a cors service to all of our clients.  In addition to enabling cross-origin requests, cors.movableink.com intelligently caches identical requests for 10 seconds.  This allows multiple crops for one email to operate on the same API response.  It also helps avoid excessive traffic flooding the API endpoints.</p>
 
-    <script type="text/javascript">
-      $.ajax({
+
+  </div>
+</div>
+
+
+  <a href="../index.html" class="link-back -black">BACK TO FAQ</a>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <script>
+    $.ajax({
         async: false,
         url: 'http://cors.movableink.com/www.reddit.com/r/technology.json'
       }).done(function(response) {
@@ -47,6 +65,8 @@
         $('#to_be_cropped').html(story.title);
         $('#dynamic_link').attr('href', story.url);
       });
-    </script>
-  </body>
+
+  </script>
+
+</body>
 </html>

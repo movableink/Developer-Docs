@@ -1181,7 +1181,8 @@ textarea {
     clear: both; }
 
 body {
-  background-color: #F3F3F3; }
+  background-color: #F3F3F3;
+  padding-bottom: 3em; }
 
 header {
   position: relative;
@@ -1277,7 +1278,6 @@ header {
   .faq-content p:nth-of-type(1) {
     margin-top: 2em; }
   .faq-content img:first-child {
-    margin-top: 2em;
     border: 1px solid #E1E4E8;
     display: block; }
 

@@ -1,38 +1,50 @@
+<!doctype html>
 <html>
-  <head>
-    <title>Request Meta Data</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movable Ink SDK - Request Data</title>
+  <link rel="stylesheet" href="/css/style.css">
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <style type="text/css" media="screen">
+    #to_be_cropped {
+      width: 400px;
+      height: 200px;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: "times new roman";
+      background-color: #F3EEFC;
+      color: #022909;
+    }
+  </style>
 
-    <style type="text/css" media="all">
+</head>
+<body>
 
-#to_be_cropped {
-  width: 400px;
-  height: 200px;
-  font-size: 12px;
-  font-weight: bold;
-  font-family: "times new roman";
-  background-color: #F3EEFC;
-  color: #022909;
-}
-
-    </style>
-  </head>
-
-  <body>
-
-
-    <h2>Content to be cropped</h2>
-
-    <div id="to_be_cropped">
-
-    </div>
+<header>
+  <a href="../index.html" class="link-back -absolute-center -white">BACK TO FAQ</a>
+  <h1>Movable Ink SDK Index - Request Data</h1>
+</header>
 
 
-    <h2>About Request Meta Data</h2>
+<div class="container-content -med_width">
+  <div class="content">
+    <h4>Content to be cropped</h4>
+
+    <div id="to_be_cropped"></div>
+
+    <h4>About Request Meta Data</h4>
     <p>When an email client requests images from Movable Ink, it will pass along information that may be useful in determining what to show.  These are things like user agent and IP address.  Movable Ink interprets these two points of data to determine device type and an estimated location of open.</p>
-    <h2>Gotchas</h2>
+    <h4>Gotchas</h4>
     <p>Movable Ink will make a separate crop for every set of query parameters.  If you enable "pass location", you should expect slower image load times because each image request will be unique and we will not be able to retrieve information from a cache.</p>
+
+  </div>
+</div>
+
+
+  <a href="../index.html" class="link-back -black">BACK TO FAQ</a>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <script type="text/javascript">
       var urlParams = {};
@@ -53,5 +65,6 @@
       $('#to_be_cropped').html(message);
 
     </script>
-  </body>
+
+</body>
 </html>

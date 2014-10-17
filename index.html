@@ -37,8 +37,9 @@
         <div class="faq-content">
            <img src="http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png" alt="" />
           <p>When MI takes a snapshot of this page, the browser will crop around the "#mi_size_container" element. This can be any ID you want it to be, and is modifiable in the Movable Ink application when setting up the crop in the "CSS Selector" field. Everything outside of this DOM element (that is not overlapping) will not be included in the crop.</p>
-
           <p>View page source and take a look at the comments for the CSS for some more info about CSS 3 support. </p>
+
+          <a href="examples/current_time.html">Learn More</a>
         </div>
       </li>
     </ul>
@@ -73,6 +74,7 @@
           <p>In this example, if you append ?name=Christopher to the end of the URL, you will see that the name "Christopher" gets added to #to_be_cropped element. You can assign whatever value to "name" in the URL, and the page will change based on what you put in there.</p>
 
           <p>When the email client sends a request to our server, any parameter that is added to the end of the image path is appended to the end of this URL. So, for example, if the embed code (html snippets form Movable Ink) is:</p>
+          <a href="examples/personalized.html">Learn More</a>
         </div>
       </li>
     </ul>
@@ -89,6 +91,7 @@
           <p>Admittedly this particular implementation is hardly an API as much as it is an open .json endpoint. Hopefully this page illustrates that if you can access your data via the web (even with more sophisticated authentication schemas), it can get published in an email and rendered in real time.</p>
 
           <p>When matched with <strong>personalization</strong>, you can effectively make Movable Ink images rasterized iframes that are customized on a per recipient basis.</p>
+          <a href="examples/api.html">Learn More</a>
         </div>
       </li>
     </ul>
@@ -104,12 +107,13 @@
           <p>The Movable Ink crop that is programmed to crop this page also has the animation feature checked. That means the MI server will visit this page, take a snapshot, execute the "manualAdvance()" function, take another shot, execute "manualAdvance()" again... and do this 60 times. Once all 60 snapshots are taken, the server will compose an animated gif and deliver that to the email recipient.</p>
 
           <p>If you are creating a crop with an animation, be mindful of how much data you're trying to pack in an animated gif. A 500px by 400px image at 60 frames is functionally 12 megapixels of data. This will probably take too long for an email, as the MI server must snapshot and assemble all this data before it can initiate the delivery of a potentially large file.</p>
+          <a href="examples/animation.html">Learn More</a>
         </div>
       </li>
     </ul>
 
     <ul  class="faq-group">
-      <li class="faq-title">Requesting Meta-Fata</li>
+      <li class="faq-title">Requesting Meta-Data</li>
       <li>
         <a class="faq-trigger" id="metadata" href="#0">An Overview</a>
         <div class="faq-content">
@@ -119,6 +123,7 @@
           <p><strong>Gotchas</strong></p>
 
           <p>Movable Ink will make a separate crop for every set of query parameters. If you enable "pass location", you should expect slower image load times because each image request will be unique and we will not be able to retrieve information from a cache.</p>
+          <a href="examples/request-data.html">Learn More</a>
         </div>
       </li>
     </ul>

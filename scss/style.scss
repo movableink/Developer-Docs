@@ -4,6 +4,7 @@
 
 body {
   background-color: $ivory;
+  padding-bottom: 3em;
 }
 
 header {
@@ -101,7 +102,7 @@ header {
   color: $concrete;
   @include font-size(15px);
   p:nth-of-type(1) { margin-top: 2em;}
-  img:first-child {margin-top: 2em; border: 1px solid $cement; display: block;}
+  img:first-child {border: 1px solid $cement; display: block;}
 }
 
 .content {
