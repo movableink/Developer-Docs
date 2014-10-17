@@ -257,7 +257,7 @@ body {
  * Links ($links)
  */
 a {
-  color: #1fa3ec;
+  color: #489EBE;
   text-decoration: none; }
 
 a:hover {
@@ -1172,12 +1172,12 @@ textarea {
   thead {
     display: table-header-group;
     /* http://cbrac.co/Q6s1o2 */ } }
-.faq {
+.faq, .container-content {
   *zoom: 1; }
-  .faq:before, .faq:after {
+  .faq:before, .container-content:before, .faq:after, .container-content:after {
     content: " ";
     display: table; }
-  .faq:after {
+  .faq:after, .container-content:after {
     clear: both; }
 
 body {
@@ -1186,7 +1186,6 @@ body {
 header {
   position: relative;
   height: 180px;
-  line-height: 180px;
   text-align: center;
   background-color: #489EBE; }
   header h1 {
@@ -1200,11 +1199,14 @@ header {
     font-size: 2rem;
     font-weight: 300; }
 
-.faq {
+.faq, .container-content {
   position: relative;
   width: 90%;
   max-width: 1024px;
   margin: 2em auto; }
+
+.-med_width {
+  max-width: 860px; }
 
 .faq-categories {
   position: absolute;
@@ -1248,7 +1250,6 @@ header {
 .faq-group > li:nth-child(1n+2) {
   background: #FFFFFF;
   margin-bottom: 0.5em;
-  padding: 1.25em 1em;
   color: #489EBE;
   font-size: 20px;
   font-size: 1.25rem;
@@ -1258,14 +1259,18 @@ header {
   .faq-group > li:nth-child(1n+2):hover {
     -webkit-box-shadow: 0 0 6px #ccc;
     -moz-box-shadow: 0 0 6px #ccc;
-    box-shadow: 0 0 6px #ccc;
-    cursor: pointer; }
+    box-shadow: 0 0 6px #ccc; }
 .faq-group > li:first-child {
   padding: 0 0 0 0;
   margin: 2em 0 0.5em 0; }
 
+.faq-trigger {
+  padding: 25px 20px;
+  display: block; }
+
 .faq-content {
   display: none;
+  padding: 0 25px 20px 25px;
   color: #4A525E;
   font-size: 15px;
   font-size: 0.9375rem; }
@@ -1275,5 +1280,39 @@ header {
     margin-top: 2em;
     border: 1px solid #E1E4E8;
     display: block; }
+
+.content {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 6px #eee;
+  -moz-box-shadow: 0 0 6px #eee;
+  box-shadow: 0 0 6px #eee;
+  padding: 2em; }
+
+.link-back {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem; }
+
+.-absolute-center {
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.-white {
+  color: #FFFFFF; }
+  .-white:hover {
+    color: #1D1F25; }
+
+.-black {
+  color: #1D1F25; }
+  .-black:hover {
+    color: #489EBE; }
 
 /*# sourceMappingURL=style.css.map */

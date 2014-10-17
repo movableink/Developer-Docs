@@ -9,7 +9,6 @@ body {
 header {
   position: relative;
   height: 180px;
-  line-height: 180px;
   text-align: center;
   background-color: $blue;
   h1 {
@@ -20,13 +19,15 @@ header {
   }
 }
 
-.faq {
+.faq, .container-content {
   position: relative;
   width: 90%;
   max-width: 1024px;
   margin: 2em auto;
   @extend %clearfix;
 }
+
+.-med_width {max-width: 860px;}
 
 .faq-categories {
   position: absolute;
@@ -76,13 +77,11 @@ header {
   &:nth-child(1n+2) {
     background: $white;
     margin-bottom: 0.5em;
-    padding: 1.25em 1em;
     color: $blue;
     @include font-size(20px);
     @include box-shadow (0,0,6px, #eee);
     &:hover {
       @include box-shadow (0,0,6px, #ccc);
-      cursor: pointer;
     }
   }
   &:first-child {
@@ -91,15 +90,50 @@ header {
   }
 }
 
+.faq-trigger {
+  padding: 25px 20px;
+  display: block;
+}
+
 .faq-content {
   display: none;
+  padding: 0 25px 20px 25px;
   color: $concrete;
   @include font-size(15px);
   p:nth-of-type(1) { margin-top: 2em;}
   img:first-child {margin-top: 2em; border: 1px solid $cement; display: block;}
 }
 
+.content {
+  background: $white;
+  @include box-shadow (0,0,6px, #eee);
+  padding: 2em;
+}
 
 
+.link-back {
+  display: block;
+  // margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include font-size(12px);
+}
+
+.-absolute-center {
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  top: 24px; left: 0; bottom: 0; right: 0;
+}
+
+.-white{color: $white;
+  &:hover {color: $darkest-navy;}
+}
+
+.-black {color: $darkest-navy;
+  &:hover {color: $blue;}
+}
 
 
