@@ -1,5 +1,5 @@
 {
-  "name": "example_project",
+  "name": "movable_ink_sdk",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.2",
