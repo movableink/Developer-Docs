@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         src: "**"
       },
       images: {
-        src: "imgages/**"
+        src: "images/**"
       },
       specificFiles: {
         files: [{
