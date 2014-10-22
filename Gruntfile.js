@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        aws: grunt.file.readJSON("credentials.json"),
 
     connect: {
       server: {
@@ -42,9 +43,35 @@ module.exports = function(grunt) {
       sass: {
           files: ['**/*.scss'],
           tasks: ['sass']
-      }, 
+      },
       imagemin: {
         files: ['images/full']
+      }
+    },
+    s3: {
+      options: {
+        accessKeyId: "<%= aws.key %>",
+        secretAccessKey: "<%= aws.secret %>",
+        bucket: "developerdocs.movableink.com"
+      },
+      build: {
+        cwd: "examples/",
+        src: "**"
+      },
+      images: {
+        src: "imgages/**"
+      },
+      specificFiles: {
+        files: [{
+          src: "css/style.css",
+          dest: "css/style.css"
+        },{
+          src: "js/build/production.js",
+          dest: "js/build/production.js"
+        },{
+          src: "index.html",
+          dest: "index.html"
+        }]
       }
     }
 
@@ -55,7 +82,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-aws');
 
-    grunt.registerTask('default', ['sass', 'imagemin', 'watch', 'connect']);
+    grunt.registerTask('default', ['sass', 'imagemin', 'watch', 'connect', 's3']);
 
 };
