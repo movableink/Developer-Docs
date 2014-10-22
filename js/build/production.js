@@ -21,8 +21,8 @@
 
 // SlideToggle FAQ content interaction
 $('.faq-trigger').click(function(){
+  // event.preventDefault();
     $(this).next('.faq-content').slideToggle(500);
-    event.preventDefault();
 
     // add active states to sidebar when a question is clicked in a category
     $('.active').removeClass('active');
