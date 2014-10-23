@@ -54,9 +54,10 @@ module.exports = function(grunt) {
         secretAccessKey: "<%= aws.secret %>",
         bucket: "developerdocs.movableink.com"
       },
-      build: {
+      move: {
         cwd: "examples/",
-        src: "**"
+        src: "**",
+        dest: "examples/"
       },
       images: {
         src: "images/**"
