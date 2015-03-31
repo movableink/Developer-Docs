@@ -1,55 +1,45 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Movable Ink SDK - Animation</title>
-  <link rel="stylesheet" href="/css/style.css">
+<html style="overflow: hidden;">
+  <head>
+  <title>Animation</title>
+  <style type="text/css" media="all">
 
-  <style type="text/css" media="screen">
-    table {
-      border-spacing: 0;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-family: Arial, sans-serif;
-      color: #2675ad;
-      border: 1px solid #E1E4E8;
-    }
+body {
+  margin: 0;
+  padding: 0;
+}
 
-    td {
-      font-size: 24px;
-      line-height: 30px;
-      text-align: center;
-      font-weight: normal;
-      padding-top: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-    }
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  color: #2675ad;
+}
 
-    .label {
-      font-size: 14px;
-    }
+td {
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: normal;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
 
-    .separator {
-      min-width: 10px;
-    }
+.label {
+  font-size: 14px;
+}
+
+.separator {
+  min-width: 10px;
+}
+
   </style>
+  </head>
 
-</head>
-<body>
-
-<header>
-  <a href="../index.html" class="link-back -absolute-center -white">BACK TO FAQ</a>
-  <h1>Movable Ink SDK Index - Animation</h1>
-</header>
-
-
-<div class="container-content -med_width">
-  <div class="content">
-      <h4>Content to be cropped</h4>
+  <body>
+  <h2>Content to be cropped</h2>
     <table>
       <tbody>
         <tr class="labels_row">
@@ -73,19 +63,11 @@
       </tbody>
     </table>
 
-    <h4>About Animations</h4>
+    <h2>About Animations</h2>
     <p>This page features code from the countdown timer app in the Movable Ink interface (with a few modifications).  It is programmed to always show the amount of time between now and 3pm, five calendar days in the future.</p>
     <p>The Movable Ink crop that is programmed to crop this page also has the animation feature checked.  That means the MI server will visit this page, take a snapshot, execute the "<a onClick="manualAdvance(); return false;" href="#">manualAdvance()</a>" function, take another shot, execute "<a onClick="manualAdvance(); return false;" href="#">manualAdvance()</a>" again... and do this 60 times.  Once all 60 snapshots are taken, the server will compose an animated gif and deliver that to the email recipient.</p>
     <p>If you are creating a crop with an animation, be mindful of how much data you're trying to pack in an animated gif.  A 500px by 400px image at 60 frames is functionally 12 megapixels of data.  This will probably take too long for an email, as the MI server must snapshot and assemble all this data before it can initiate the delivery of a potentially large file.</p>
 
-
-
-  </div>
-</div>
-
-
-<a href="../index.html" class="link-back -black">BACK TO FAQ</a>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <script>
       var totalHours = false;   /* When false, hrs is a range from 0 to 23.  True is from 0 to infinity*/
@@ -223,5 +205,5 @@
       }
 
     </script>
-</body>
+  </body>
 </html>

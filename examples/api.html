@@ -1,45 +1,33 @@
-<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Movable Ink SDK - API</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <head>
+    <title>API integration</title>
 
-  <style type="text/css" media="screen">
-  #to_be_cropped {
-    width: 300px;
-    padding: 20px;
-    margin: 20px 0;
-    font-size: 14px;
-    text-align: left;
-    font-family: "times new roman";
-    background-color: #F3EEFC;
-    color: #022909;
-  }
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-  </style>
+    <style type="text/css" media="all">
 
-</head>
-<body>
+#to_be_cropped {
+  width: 300px;
+  padding: 20px;
+  font-size: 14px;
+  text-align: left;
+  font-family: "times new roman";
+  background-color: #F3EEFC;
+  color: #022909;
+}
 
-<header>
-  <a href="../index.html" class="link-back -absolute-center -white">BACK TO FAQ</a>
-  <h1>Movable Ink SDK Index - API</h1>
-</header>
+    </style>
+  </head>
+
+  <body>
 
 
-<div class="container-content -med_width">
-  <div class="content">
-
-    <h4>Content to be cropped</h4>
+    <h2>Content to be cropped</h2>
 
     <div id="to_be_cropped">
     </div>
 
-    <p><a id="dynamic_link" href="http://www.reddit.com/r/technology">dynamic link</a></p>
+    <a id="dynamic_link" href="http://www.reddit.com/r/technology">dynamic link</a>
 
     <p>Because Movable Ink relies on a very standard, open technology, it makes integration with APIs very easy.  In this example, we using the Reddit API to populate this page with the top story in <a href="http://www.reddit.com/r/technology">reddit.com/r/technology</a>.</p>
     <p>Admittedly this particular implementation is hardly an API as much as it is an open .json endpoint.  Hopefully this page illustrates that if you can access your data via the web (even with more sophisticated authentication schemas), it can get published in an email and rendered in real time.</p>
@@ -50,16 +38,8 @@
     <p>Because of this, we discourage the standard web practice of executing JS after the DOM for MI crop sources.  Additionally, AJAX calls should be made synchronous.</p>
     <p>Lastly, if you are running into Cross-Origin issues, Movable Ink offers a cors service to all of our clients.  In addition to enabling cross-origin requests, cors.movableink.com intelligently caches identical requests for 10 seconds.  This allows multiple crops for one email to operate on the same API response.  It also helps avoid excessive traffic flooding the API endpoints.</p>
 
-
-  </div>
-</div>
-
-
-  <a href="../index.html" class="link-back -black">BACK TO FAQ</a>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-  <script>
-    $.ajax({
+    <script type="text/javascript">
+      $.ajax({
         async: false,
         url: 'http://cors.movableink.com/www.reddit.com/r/technology.json'
       }).done(function(response) {
@@ -67,8 +47,6 @@
         $('#to_be_cropped').html(story.title);
         $('#dynamic_link').attr('href', story.url);
       });
-
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>

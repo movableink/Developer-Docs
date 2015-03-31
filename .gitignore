@@ -1,8 +1,0 @@
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# probbaly dont need this sass-cashe folder
-.sass-cache
-
-node_modules
-credentials.json

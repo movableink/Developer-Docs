@@ -1,7 +1,17 @@
-header {
-  position: relative;
-  height: 180px;
-  /*line-height: 180px;*/
-  text-align: center;
-  background-color: #a9c056;
+/* MI Styles */
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #444444;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  min-width: 500px;
+}
+
+h2 {
+  padding: 5px 40px;
+  border-bottom: 1px solid #888888;
 }

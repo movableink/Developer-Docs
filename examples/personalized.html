@@ -1,48 +1,37 @@
-<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Movable Ink SDK - Personalized</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <head>
+    <title>Dynamic Links</title>
 
-  <style type="text/css" media="screen">
-    #to_be_cropped {
-      width: 300px;
-      height: 70px;
-      padding: 20px;
-      margin: 20px 0;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      font-family: "times new roman";
-      background-color: #F3EEFC;
-      color: #022909;
-    }
-  </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-</head>
-<body>
+    <style type="text/css" media="all">
 
-<header>
-  <a href="../index.html" class="link-back -absolute-center -white">BACK TO FAQ</a>
-  <h1>Movable Ink SDK Index - Personalized</h1>
-</header>
+#to_be_cropped {
+  width: 300px;
+  height: 20px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "times new roman";
+  background-color: #F3EEFC;
+  color: #022909;
+}
+
+    </style>
+  </head>
+
+  <body>
 
 
-<div class="container-content -med_width">
-  <div class="content">
-
-    <h4>Content to be cropped</h4>
+    <h2>Content to be cropped</h2>
 
     <div id="to_be_cropped">
       Hi, <span>Recipient</span>!
     </div>
 
 
-    <h4>About Personalizing through Parameters</h4>
+    <h2>About Personalizing through Parameters</h2>
     <p>In the last two examples you saw how MI integrates with time-sensitive content.  In this example, we're going to look at user-specific content.</p>
 
     <p>In this example, if you append <a href="?name=Christopher">?name=Christopher</a> to the end of the URL, you will see that the name "Christopher" gets added to #to_be_cropped element.  You can assign whatever value to "name" in the URL, and the page will change based on what you put in there.</p>
@@ -68,22 +57,14 @@
 
     <p>This is a powerful way to pack a lot of rich, live data into your emails.  When properly hooked up, crops are functionally more like iframes than they are conventional images.  Additionally, you can use the MI dynamic link ability to create unique click-through links per recipient.</p>
 
-    <h4>Gotchas</h4>
-    <h5>Keep in mind that there are public URLs</h5>
+    <h2>Gotchas</h2>
+    <h3>Keep in mind that there are public URLs</h3>
     <p>One thing you'll want to consider when appending personalized parameters is that all MI url endpoints are completely public.  You would not want to merge in an account number to retrieve an image of someone's checking account balance.</p>
-    <h5>This will visit the crop source once every email open</h5>
+    <h3>This will visit the crop source once every email open</h3>
     <p>If you do not use personalized parameters, MI will visit the source page once every cache cycle.  If you add in parameters, MI will visit the source page once every unique parameter set.  We have had a few clients accidentally attack their own websites through their email campaigns.  Don't let this happen, and plan accordingly.  If you would like advise on this, please feel free to contact us.</p>
 
-
-  </div>
-</div>
-
-
-  <a href="../index.html" class="link-back -black">BACK TO FAQ</a>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-  <script type="text/javascript">
-    var name = param('name') || 'Recipient';
+    <script type="text/javascript">
+      var name = param('name') || 'Recipient';
       var n = document.querySelector('#to_be_cropped span');
       n.innerText = name;
 
@@ -102,8 +83,6 @@
         }
         return urlParams[name];
       }
-
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
