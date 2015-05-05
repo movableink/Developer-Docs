@@ -3,6 +3,7 @@
     <title>API integration</title>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://projects.movableink.com/production/libs/cropduster.2.7.1.js"></script>
 
     <style type="text/css" media="all">
 
@@ -35,14 +36,12 @@
 
     <h3>Implementation Notes</h3>
     <p>For a number of reasons (image delivery time, server health), we are quite strict about how eagerly we take snapshots of websites.  Consequently, we snapshot as soon as the DOM reports that it is ready.</p>
-    <p>Because of this, we discourage the standard web practice of executing JS after the DOM for MI crop sources.  Additionally, AJAX calls should be made synchronous.</p>
-    <p>Lastly, if you are running into Cross-Origin issues, Movable Ink offers a cors service to all of our clients.  In addition to enabling cross-origin requests, cors.movableink.com intelligently caches identical requests for 10 seconds.  This allows multiple crops for one email to operate on the same API response.  It also helps avoid excessive traffic flooding the API endpoints.</p>
+    <p>To account for this, please use the <a href="https://github.com/movableink/cropduster">Cropduster library</a> (included on this page) to pull in asynchronous requests.  Synchronous calls are deprecated and support will soon be removed for them.  Cropduster (CD) will also pass things through a CORS proxy, as well as applying a caching layer in all your requests.  For more documentation, visit the <a href="https://github.com/movableink/cropduster">Cropduster library</a> on github.</p>
 
     <script type="text/javascript">
-      $.ajax({
-        async: false,
-        url: 'http://cors.movableink.com/www.reddit.com/r/technology.json'
-      }).done(function(response) {
+      var url = 'http://cors.movableink.com/www.reddit.com/r/technology.json';
+      CD.getCORS(url, function(raw) {
+        var response = JSON.parse(raw);
         var story = response.data.children[0].data;
         $('#to_be_cropped').html(story.title);
         $('#dynamic_link').attr('href', story.url);
