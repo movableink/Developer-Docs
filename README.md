@@ -1,47 +1,44 @@
-Movable Ink SDK
-===============
+<div align="center">
+  <a href="https://movableink.com/">
+    <img width="161" heigth="48" src="https://d2j7qxqaxrrv1i.cloudfront.net/assets/movable-ink-logo-inkstrap-72e247e179a8cbe3b2589208924a9dc0.png">
+  </a>
+  <br>
+  <br>
+  <h1>Movable Ink</h1>
+  <p>
+    Movable Ink provides technologies that allow you to create images on demand.
+  <p>
+</div>
 
-Technology Overview
--------------------
+## Table of Contents
+1. [Introduction](#introduction)
+1. [Requirements](#requirements)
+1. [Concepts](#concepts)
+1. [Examples](#examples)
+1. [Helpful Links](#helpful-links)
 
-**Movable Ink provides technologies that allow you to create images on demand.**
 
-For example,
+## Introduction
+Movable Ink provides technologies that allow you to create images on demand. 
+These images are generated dynamically as soon as Movable Ink receives a request for them.
 
-    <img src="http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png" alt="" />
 
-displays the following image:
+## Requirements
+- [ ] A Movable Ink account
+- [ ] Basic understanding of JS/HTML/CSS
+- [ ] A server to upload your project to
+- [ ] Access to Movable Ink CORS server
+ 
 
-![](http://www.movable-ink-7158.com/p/rp/90a35cd3f0528f7c.png)
+## Concepts
+The driving rendering engine behind MI technology is a fairly recent version of webkit.
 
-These images are constructed dynamically as soon as Movable Ink receives a request for this image.  If you refresh the page, you should see an image with new, up to date content.
 
-The driving rendering engine behind MI technology is a fairly recent version of webkit.  This particular image is actually a screen capture of the "#mi_size_container" element on this web page:
+## Examples
+* [Website Crop](https://github.com/movableink/Developer-Docs/blob/master/examples/website-crop)
+* [API Crop](https://github.com/movableink/Developer-Docs/blob/master/examples/api-crop)
 
-    http://projects.movableink.com/production/sdk/examples/current_time.html
 
-SDK Content
------------
-
-This kit goes into depth on how to use this technology.  It includes a handful of examples that walk through different use cases.  It covers both useful tips as well as how to avoid common gotchas, including:
-
-* passing in user-specific data into the web crops to personalize each one
-* MI's device and geolocation intelligence in web crops
-* building animated gifs
-* third party integrations (API's, other websites)
-* when the capture is fired and how to code pages to optimize for this
-* responsible caching strategies (so that you don't DDOS your data service)
-
-Requirements
-------------
-
-To get really involved with the SDK, you will need an account with Movable Ink.  If you don't currently have one and are interested in getting one, please [get in touch with us](http://info.movableink.com/request-demo).
-
-If you don't have an account but would lik to learn about the tech anyways, feel free to download this and read along.  You may not be able to engage with some of the activities, but there are definitely things you can learn from going through the code.
-
-Helpful Links
--------------
-
-* [http://movableink.com/](http://movableink.com/)
-* [http://support.movableink.com](http://support.movableink.com)
-* [http://www.pinterest.com/movableink/](http://www.pinterest.com/movableink/)
+## Helpful Links
+* [Support Center](http://support.movableink.com)
+* [Cropduster Lib](https://github.com/movableink/cropduster)
