@@ -1,0 +1,42 @@
+* {
+  box-sizing : border-box;
+  margin     : 0;
+  padding    : 0;
+}
+
+#mi_size_container.hidden {
+  width    : 1px;
+  height   : 1px;
+  overflow : hidden;
+}
+
+#mi_size_container.hidden * {
+  visibility : hidden !important;
+  width      : 1px !important;
+  height     : 1px !important;
+}
+
+/***********
+Project Styles
+**************/
+
+#mi_size_container {
+  float       : left;
+  position    : relative;
+  width       : 240px;
+  height      : 240px;
+  font-family : "Arial", sans-serif;
+}
+
+.image {
+  background-size   : contain;
+  background-repeat : no-repeat;
+  width             : 200px;
+  height            : 200px;
+  margin            : 5px auto;
+}
+
+.title {
+  text-align : center;
+  font-size  : 14px;
+}
